@@ -1,0 +1,7 @@
+title: egor dunaev
+description: cv, blog, experiments
+permalink: /blog/:title/
+exclude: [README.md]
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }
