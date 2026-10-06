@@ -1,0 +1,25 @@
+---
+title: blog
+---
+{%- comment -%}
+Posts live in _posts/, optionally in subfolders. Each subfolder renders as a directory.
+Groups and posts are newest first.
+{%- endcomment -%}
+{%- assign groups = site.posts | group_by_exp: "p", "p.path | remove_first: '_posts/' | split: '/' | pop | join: '/'" -%}
+{%- assign dirs = groups | where_exp: "g", "g.name != ''" | size -%}
+<pre class="tree"><span class="dir">blog/</span>
+{%- for g in groups -%}
+  {%- assign lastg = forloop.last -%}
+  {%- if g.name != "" %}
+{% if lastg %}└── {% else %}├── {% endif %}<span class="dir">{{ g.name }}/</span>
+    {%- for p in g.items %}
+{% if lastg %}    {% else %}│   {% endif %}{% if forloop.last %}└── {% else %}├── {% endif %}<time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%Y-%m-%d" }}</time>  <a href="{{ p.url }}">{{ p.title }}</a>
+    {%- endfor -%}
+  {%- else -%}
+    {%- for p in g.items %}
+{% if lastg and forloop.last %}└── {% else %}├── {% endif %}<time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%Y-%m-%d" }}</time>  <a href="{{ p.url }}">{{ p.title }}</a>
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor %}
+
+{{ dirs }} {% if dirs == 1 %}directory{% else %}directories{% endif %}, {{ site.posts.size }} {% if site.posts.size == 1 %}file{% else %}files{% endif %}</pre>
