@@ -1,4 +1,4 @@
-# egordunaev.github.io
+# [egordunaev.github.io](https://egordunaev.github.io/)
 
 Personal site built with plain [Jekyll](https://jekyllrb.com). GitHub Pages builds and deploys it on every push to `gh-pages`
 
