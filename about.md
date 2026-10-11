@@ -22,8 +22,10 @@ For fun I do art, music, and try to make games.
 
 ## projects
 
-- **push --to-limit:** Idle/clicker game about coding and working in software engineering. Demo: [crushlizard.itch.io/push-to-limit](https://crushlizard.itch.io/push-to-limit) *(C#, Unity, GitHub Actions)*. Currently only in demo, maybe someday I'll revisit the idea.
-- ...more to come
+- **push --to-limit** - Idle/clicker game about coding and working in software engineering. Demo: [crushlizard.itch.io/push-to-limit](https://crushlizard.itch.io/push-to-limit) *(C#, Unity, GitHub Actions)*. Currently only in demo, maybe someday I'll revisit the idea.
+- **aseprite ascii** - Aseprite extension capable of converting images into ascii art (Lua) [egordunaev/aseprite-ascii](https://github.com/egordunaev/aseprite-ascii)
+
+...and more to come
 
 --------------------
 
